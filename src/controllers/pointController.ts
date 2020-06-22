@@ -85,7 +85,7 @@ const pointController = {
 
       const serializedPoint = {
         ...point,
-        url_image: `http://localhost:3000/uploads/${point.image}`,
+        url_image: `${process.env.API_URL}/uploads/${point.image}`,
       };
 
       return response.json({ point: serializedPoint, items });
@@ -119,12 +119,12 @@ const pointController = {
       point.items = point.items.map((item: Item) => {
         return {
           ...item,
-          url_image: `http://localhost:3000/uploads/${item.image}`,
+          url_image: `${process.env.API_URL}/uploads/${item.image}`,
         };
       });
       return {
         ...point,
-        url_image: `http://localhost:3000/uploads/${point.image}`,
+        url_image: `${process.env.API_URL}/uploads/${point.image}`,
       };
     });
 

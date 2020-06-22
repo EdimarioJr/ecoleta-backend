@@ -8,7 +8,7 @@ const itemController = {
       return {
         id: current.id,
         title: current.title,
-        url_image: `http://localhost:3000/uploads/${current.image}`,
+        url_image: `${process.env.API_URL}/uploads/${current.image}`,
       };
     });
     return response.json(serializedItems);
